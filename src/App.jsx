@@ -5,6 +5,11 @@ import ViewCoursesPage from "./pages/ViewCoursesPage";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import CourseDetailsPage from "./pages/CourseDetailsPage";
+import Login from "./pages/User/Login";
+import Register from "./pages/User/Register";
+import Profile from "./pages/User/Profile";
+import AllUsers from "./pages/User/AllUsers";
+import UpdateProfile from "./pages/User/UpdateProfile";
 
 function App() {
   return (
@@ -16,6 +21,12 @@ function App() {
           <Route path="/add" element={<AddCoursePage />} />
           <Route path="/courses" element={<ViewCoursesPage />} />
           <Route path="/courses/:id" element={<CourseDetailsPage />} />
+           <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="*" element={<Login />} /> {/* default to login */}
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/users" element={<AllUsers />} />
+          <Route path="/edit-profile" element={<UpdateProfile />} />
         </Routes>
       </div>
     </Router>
