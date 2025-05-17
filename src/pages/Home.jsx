@@ -3,6 +3,14 @@ import { Search, ArrowRight, BookOpen, Star, Clock, Users, ChevronRight } from "
 import CourseForm from "../components/CourseForm";
 import CourseList from "../components/CourseList";
 
+
+import php from "../assets/php.jpeg";
+import java from "../assets/java.jpeg";
+import javascript from "../assets/javascript.jpeg";
+import css from "../assets/css.jpeg";
+
+const CourseImages = [php, java, javascript, css];
+
 const Home = () => {
   const [editCourse, setEditCourse] = useState(null);
   const [refresh, setRefresh] = useState(false);
@@ -314,7 +322,7 @@ const Home = () => {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {courses.slice(0, 8).map((course) => (
+            {courses.slice(0, 8).map((course,idx) => (
               <a
                 key={course.id}
                 href={`/courses/${course.id}`}
@@ -322,7 +330,7 @@ const Home = () => {
               >
                 <div className="relative">
                   <img
-                    src={course.imageUrl || "/api/placeholder/400/250"}
+                    src={CourseImages[idx % CourseImages.length]}
                     alt={course.title || "Course"}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
