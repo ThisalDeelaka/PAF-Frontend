@@ -2,6 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Search, ChevronRight, Star, Clock, Users, Filter, SlidersHorizontal } from "lucide-react";
 import CourseList from "../components/CourseList";
 
+import php from "../assets/php.jpeg";
+import java from "../assets/java.jpeg";
+import javascript from "../assets/javascript.jpeg";
+import css from "../assets/css.jpeg";
+
+const CourseImages = [php, java, javascript, css];
+
 const ViewCoursesPage = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -251,7 +258,7 @@ const ViewCoursesPage = () => {
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {courses.map((course) => (
+                  {courses.map((course, idx) => (
                     <a
                       key={course.id}
                       href={`/courses/${course.id}`}
@@ -259,7 +266,7 @@ const ViewCoursesPage = () => {
                     >
                       <div className="relative">
                         <img
-                          src={course.imageUrl || "/api/placeholder/400/250"}
+                          src={CourseImages[idx % CourseImages.length]}
                           alt={course.title || "Course"}
                           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                         />
