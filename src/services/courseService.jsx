@@ -18,3 +18,7 @@ export const addNote = (id, note) =>
 // ✅ Toggle completion status of a note (by index)
 export const toggleNoteCompletion = (id, index) =>
   axios.put(`${API_BASE}/${id}/notes/${index}/toggle`);
+
+// Add this to your server.js (or courseService.js) with the other exports
+export const deleteNote = (id, index) => 
+  axios.delete(`${API_BASE}/${id}/notes/${index}`);
