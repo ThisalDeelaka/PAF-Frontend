@@ -352,7 +352,7 @@ const Home = () => {
                     </span>
                   </div>
                   <h3 className="font-bold text-lg text-gray-900 mb-2 line-clamp-2 group-hover:text-[#FF7350] transition-colors">
-                    {course.title || "Untitled Course"}
+                    {course.title || "Course"}
                   </h3>
                   <p className="text-gray-600 mb-4 line-clamp-2">
                     {course.description ||
