@@ -54,20 +54,14 @@ const Navbar = () => {
         </Link>
 
         <Link
-          to="/users"
+          to="/manage-courses"
           className="px-4 py-2 rounded font-medium transition-colors duration-300"
-          style={makeStyle("/users", "#125875")}
+          style={makeStyle("/manage-courses", "#125875")}
         >
-          All Users
+          Manage Courses
         </Link>
 
-        <Link
-          to="/edit-profile"
-          className="px-4 py-2 rounded font-medium transition-colors duration-300"
-          style={makeStyle("/edit-profile", "#FF7350")}
-        >
-          Edit Profile
-        </Link>
+        
       </div>
     </nav>
   );

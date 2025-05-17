@@ -10,6 +10,7 @@ import Register from "./pages/User/Register";
 import Profile from "./pages/User/Profile";
 import AllUsers from "./pages/User/AllUsers";
 import UpdateProfile from "./pages/User/UpdateProfile";
+import CourseManager from "./pages/CourseManager";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/users" element={<AllUsers />} />
           <Route path="/edit-profile" element={<UpdateProfile />} />
+          <Route path="/manage-courses" element={<CourseManager />} />
         </Routes>
       </div>
     </Router>
